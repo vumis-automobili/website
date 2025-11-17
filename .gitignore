@@ -1,0 +1,15 @@
+# Claude Flow metrics and development files
+.claude-flow/
+.swarm/
+
+# macOS files
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-*
+
+# Temporary files
+*.tmp
+*.log
