@@ -1,0 +1,25 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Embedded logo image with transparent black -->
+  <defs>
+    <mask id="logoMask">
+      <rect width="500" height="500" fill="white"/>
+      <!-- This will make black areas transparent -->
+      <image xlink:href="vumis-logo-new.jpg" width="500" height="500" style="mix-blend-mode: multiply;"/>
+    </mask>
+  </defs>
+
+  <!-- Gold circle outline -->
+  <circle cx="250" cy="250" r="180" fill="none" stroke="url(#goldGradient)" stroke-width="8"/>
+
+  <!-- Embedded logo with transparency -->
+  <image xlink:href="vumis-logo-new.jpg" width="500" height="500" preserveAspectRatio="xMidYMid meet" style="mix-blend-mode: screen;"/>
+
+  <!-- Gold gradient definition -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFC107;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFEB3B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
