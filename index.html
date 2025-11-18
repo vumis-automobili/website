@@ -139,9 +139,19 @@
                         <i class="fas fa-phone"></i>
                         <span>065/6810-032</span>
                     </a>
+                    <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </nav>
+        <div class="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="#services" class="mobile-nav-link">Usluge</a>
+                <a href="#contact" class="mobile-nav-link">Kontakt</a>
+                <a href="tel:0656810032" class="mobile-nav-link highlight">Pozovite 065/6810-032</a>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -467,50 +477,62 @@
                     <p class="section-description">Dostupni 24/7 za sve vaše potrebe</p>
                 </div>
 
-                <div class="contact-grid-simple">
-                    <div class="contact-card-large">
-                        <div class="contact-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <h3>Instagram</h3>
-                        <a href="https://www.instagram.com/otkupiprodajaautavumis/" target="_blank" class="contact-link-large">
-                            @otkupiprodajaautavumis
-                        </a>
-                        <p>Pratite nas i pošaljite direktnu poruku</p>
-                        <a href="https://www.instagram.com/otkupiprodajaautavumis/" target="_blank" class="btn btn-primary">
-                            <i class="fab fa-instagram"></i>
-                            Otvori Instagram
-                        </a>
+                <div class="contact-container">
+                    <div class="contact-form-wrapper">
+                        <h3>Pošaljite Upit</h3>
+                        <p>Popunite formu i otvoriće vam se WhatsApp sa spremnom porukom.</p>
+                        <form id="whatsappForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Ime i Prezime</label>
+                                <input type="text" id="name" name="name" required placeholder="Vaše ime">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="Vaš broj telefona">
+                            </div>
+                            <div class="form-group">
+                                <label for="car">Automobil (Marka, Model, Godište)</label>
+                                <input type="text" id="car" name="car" placeholder="npr. Audi A4 2018">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Dodatna Poruka</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Opišite stanje vozila..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-whatsapp btn-block">
+                                <i class="fab fa-whatsapp"></i>
+                                Pošalji na WhatsApp
+                            </button>
+                        </form>
                     </div>
 
-                    <div class="contact-card-large">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
+                    <div class="contact-info-wrapper">
+                        <div class="contact-card-small">
+                            <div class="contact-icon-small">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div>
+                                <h4>Instagram</h4>
+                                <a href="https://www.instagram.com/otkupiprodajaautavumis/" target="_blank">@otkupiprodajaautavumis</a>
+                            </div>
                         </div>
-                        <h3>WhatsApp</h3>
-                        <a href="https://wa.me/381656810032" class="contact-link-large">
-                            065/6810-032
-                        </a>
-                        <p>Pošaljite nam poruku bilo kada</p>
-                        <a href="https://wa.me/381656810032" target="_blank" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                            Otvori WhatsApp
-                        </a>
-                    </div>
-
-                    <div class="contact-card-large">
-                        <div class="contact-icon">
-                            <i class="fab fa-viber"></i>
+                        <div class="contact-card-small">
+                            <div class="contact-icon-small">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/381656810032" target="_blank">065/6810-032</a>
+                            </div>
                         </div>
-                        <h3>Viber</h3>
-                        <a href="viber://chat?number=381656810032" class="contact-link-large">
-                            065/6810-032
-                        </a>
-                        <p>Kontaktirajte nas preko Viber-a</p>
-                        <a href="viber://chat?number=381656810032" class="btn btn-secondary">
-                            <i class="fab fa-viber"></i>
-                            Otvori Viber
-                        </a>
+                        <div class="contact-card-small">
+                            <div class="contact-icon-small">
+                                <i class="fab fa-viber"></i>
+                            </div>
+                            <div>
+                                <h4>Viber</h4>
+                                <a href="viber://chat?number=381656810032">065/6810-032</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -594,6 +616,10 @@
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
+
+    <button id="backToTop" class="back-to-top" title="Povratak na vrh">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="js/script.js"></script>
 </body>

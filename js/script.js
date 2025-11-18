@@ -16,45 +16,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// CTA Button - scroll to contact
-const ctaButton = document.querySelector('.cta-button');
-if (ctaButton) {
-    ctaButton.addEventListener('click', () => {
-        window.location.href = 'tel:063327327';
-    });
-}
 
-// Form submission handler
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = contactForm.querySelector('input[name="name"]').value;
-        const phone = contactForm.querySelector('input[name="phone"]').value;
-        const car = contactForm.querySelector('input[name="car"]').value;
-        const message = contactForm.querySelector('textarea[name="message"]').value;
-
-        // Simple validation
-        if (name && phone) {
-            // Create WhatsApp message
-            const whatsappMessage = `Pozdrav! Moje ime je ${name}.\nTelefon: ${phone}${car ? `\nAutomobil: ${car}` : ''}${message ? `\nPoruka: ${message}` : ''}`;
-            const whatsappURL = `https://wa.me/381633327327?text=${encodeURIComponent(whatsappMessage)}`;
-
-            // Show success message
-            alert('Hvala na upitu! Bićete preusmereni na WhatsApp.');
-
-            // Open WhatsApp
-            window.open(whatsappURL, '_blank');
-
-            // Reset form
-            contactForm.reset();
-        } else {
-            // Show error if validation fails
-            alert('Molimo unesite ime i telefon.');
-        }
-    });
-}
 
 // Header scroll effect
 let lastScroll = 0;
@@ -88,7 +50,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe benefit cards and steps
-document.querySelectorAll('.benefit-card, .step').forEach(el => {
+document.querySelectorAll('.feature-item, .service-card, .trust-stat').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -96,9 +58,70 @@ document.querySelectorAll('.benefit-card, .step').forEach(el => {
 });
 
 // Track phone calls
-document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-    link.addEventListener('click', () => {
-        console.log('Phone call initiated:', link.href);
-        // You can add analytics tracking here
+
+
+// Mobile Menu Toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mobileNav = document.querySelector('.mobile-nav');
+
+if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (mobileNav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     });
-});
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+        });
+    });
+}
+
+// WhatsApp Form Handler
+const whatsappForm = document.getElementById('whatsappForm');
+if (whatsappForm) {
+    whatsappForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const car = document.getElementById('car').value;
+        const message = document.getElementById('message').value;
+
+        let text = `Pozdrav, moje ime je ${name}. \nTelefon: ${phone}`;
+        if (car) text += `\nAutomobil: ${car}`;
+        if (message) text += `\nPoruka: ${message}`;
+
+        const encodedText = encodeURIComponent(text);
+        window.open(`https://wa.me/381656810032?text=${encodedText}`, '_blank');
+    });
+}
+
+// Back to Top Button
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
