@@ -621,6 +621,59 @@ body {
 }
 
 /* ===================================
+   FAQ SECTION
+   =================================== */
+
+.faq-section {
+    padding: 6rem 0;
+    background: var(--dark-bg);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.faq-item {
+    background: var(--dark-card);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--dark-border);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.faq-question {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.faq-question i {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.faq-answer {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* ===================================
    CONTACT SECTION
    =================================== */
 
@@ -952,6 +1005,11 @@ body {
 
     .trust-number {
         font-size: 2.5rem;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .contact-grid-simple {

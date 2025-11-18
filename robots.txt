@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://vumis-automobili.github.io/website/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
