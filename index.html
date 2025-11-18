@@ -173,42 +173,69 @@
                 <div class="container">
                     <div class="hero-text">
                         <h1 class="hero-title">
-                            Otkup Automobila Beograd i Srbija -
-                            <span class="highlight">Najbolje Cene, KEŠ Isplata Odmah</span>
+                            Najbolje Cene za <br>
+                            <span class="highlight type-writer" data-text="Otkup Automobila"></span>
+                            <span class="cursor">|</span>
                         </h1>
                         <p class="hero-description">
-                            Otkup, Prodaja, Zamena i Posredovanje Vozila u Beogradu i celoj Srbiji | Beslplatna procena
-                            • Gotovina Odmah • Dolazimo Besplatno
+                            Besplatna procena i isplata u kešu odmah. Dolazimo na vašu adresu bilo gde u Srbiji.
                         </p>
-                        <div class="hero-stats">
-                            <div class="stat">
-                                <div class="stat-number">500+</div>
-                                <div class="stat-label">Vozila Godišnje</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">24/7</div>
-                                <div class="stat-label">Dostupnost</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">100%</div>
-                                <div class="stat-label">Zadovoljstvo</div>
-                            </div>
-                        </div>
                         <div class="hero-buttons">
-                            <a href="tel:0656810032" class="btn btn-primary">
-                                <i class="fas fa-phone-alt"></i>
-                                Pozovite Odmah
-                            </a>
-                            <a href="#services" class="btn btn-secondary">
-                                <i class="fas fa-arrow-down"></i>
-                                Naše Usluge
-                            </a>
+                            <a href="#contact" class="btn btn-primary glow-effect">Besplatna Procena</a>
+                            <a href="tel:0656810032" class="btn btn-secondary glow-effect">Pozovite Odmah</a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Background pattern -->
             <div class="hero-pattern"></div>
+        </section>
+
+        <!-- Brand Marquee Section -->
+        <div class="brand-marquee">
+            <div class="marquee-content">
+                <span>BMW</span> <span>•</span> <span>AUDI</span> <span>•</span> <span>MERCEDES</span> <span>•</span>
+                <span>VOLKSWAGEN</span> <span>•</span> <span>TOYOTA</span> <span>•</span> <span>HONDA</span>
+                <span>•</span>
+                <span>FIAT</span> <span>•</span> <span>PEUGEOT</span> <span>•</span> <span>CITROEN</span> <span>•</span>
+                <span>RENAULT</span> <span>•</span> <span>SKODA</span> <span>•</span> <span>HYUNDAI</span>
+                <span>•</span>
+                <span>KIA</span> <span>•</span> <span>FORD</span> <span>•</span> <span>OPEL</span> <span>•</span>
+                <span>BMW</span> <span>•</span> <span>AUDI</span> <span>•</span> <span>MERCEDES</span> <span>•</span>
+                <span>VOLKSWAGEN</span> <span>•</span> <span>TOYOTA</span> <span>•</span> <span>HONDA</span>
+                <span>•</span>
+                <span>FIAT</span> <span>•</span> <span>PEUGEOT</span> <span>•</span> <span>CITROEN</span> <span>•</span>
+                <span>RENAULT</span> <span>•</span> <span>SKODA</span> <span>•</span> <span>HYUNDAI</span>
+                <span>•</span>
+                <span>KIA</span> <span>•</span> <span>FORD</span> <span>•</span> <span>OPEL</span> <span>•</span>
+            </div>
+        </div>
+
+        <!-- Valuation Slider Section -->
+        <section class="valuation-section">
+            <div class="container">
+                <div class="valuation-container glass-card">
+                    <div class="valuation-header">
+                        <h2>Procenite Vrednost Vašeg Automobila</h2>
+                        <p>Pomerite slajdere da dobijete okvirnu ponudu</p>
+                    </div>
+                    <div class="valuation-controls">
+                        <div class="control-group">
+                            <label>Godište Automobila: <span id="yearValue">2015</span></label>
+                            <input type="range" id="yearSlider" min="2010" max="2025" value="2015" class="slider">
+                        </div>
+                        <div class="control-group">
+                            <label>Stanje (1-10): <span id="conditionValue">7</span></label>
+                            <input type="range" id="conditionSlider" min="1" max="10" value="7" class="slider">
+                        </div>
+                    </div>
+                    <div class="valuation-result">
+                        <div class="price-label">Procenjena Vrednost:</div>
+                        <div class="price-value" id="priceResult">€3,500 - €4,200</div>
+                        <p class="disclaimer">*Ovo je okvirna procena. Za tačnu cenu nas kontaktirajte.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Services Section -->
@@ -325,53 +352,35 @@
                     <p class="section-description">Vaš najpouzdaniji partner za otkup automobila u Beogradu i Srbiji</p>
                 </div>
 
-                <div class="features-grid">
-                    <div class="feature-item">
+                <div class="features-grid bento-grid">
+                    <div class="feature-item bento-large tilt-card">
                         <div class="feature-icon">
-                            <i class="fas fa-dollar-sign"></i>
+                            <i class="fas fa-wallet"></i>
                         </div>
                         <h3>Najbolje Cene</h3>
-                        <p>Garantujemo najpovoljnije cene na tržištu sa fer procenom</p>
+                        <p>Garantujemo najbolju isplatu na tržištu. Pratimo trenutne cene i nudimo fer procenu za vaše
+                            vozilo.</p>
                     </div>
-
-                    <div class="feature-item">
+                    <div class="feature-item tilt-card">
                         <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-clock"></i>
                         </div>
-                        <h3>Siguran Posao</h3>
-                        <p>Potpuna transparentnost i legalna dokumentacija</p>
+                        <h3>Brza Isplata</h3>
+                        <p>Novac dobijate odmah na ruke ili račun.</p>
                     </div>
-
-                    <div class="feature-item">
+                    <div class="feature-item tilt-card">
                         <div class="feature-icon">
-                            <i class="fas fa-bolt"></i>
+                            <i class="fas fa-map-marked-alt"></i>
                         </div>
-                        <h3>Brza Usluga</h3>
-                        <p>Od procene do transakcije za 24-48 sati</p>
+                        <h3>Dolazak na Adresu</h3>
+                        <p>Besplatan dolazak bilo gde u Srbiji.</p>
                     </div>
-
-                    <div class="feature-item">
+                    <div class="feature-item bento-wide tilt-card">
                         <div class="feature-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-file-contract"></i>
                         </div>
-                        <h3>Dolazimo Do Vas</h3>
-                        <p>Besplatno dolazimo na vašu adresu</p>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3>24/7 Podrška</h3>
-                        <p>Dostupni smo non-stop za sve vaše potrebe</p>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3>Iskustvo</h3>
-                        <p>Hiljade zadovoljnih klijenata</p>
+                        <h3>Pravna Sigurnost</h3>
+                        <p>Svu papirologiju i prenos vlasništva završavamo mi. Vi ne morate da čekate u redovima.</p>
                     </div>
                 </div>
             </div>

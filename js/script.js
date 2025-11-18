@@ -125,3 +125,100 @@ if (backToTopBtn) {
         });
     });
 }
+
+// --- Valuation Slider Logic ---
+const yearSlider = document.getElementById('yearSlider');
+const conditionSlider = document.getElementById('conditionSlider');
+const yearValue = document.getElementById('yearValue');
+const conditionValue = document.getElementById('conditionValue');
+const priceResult = document.getElementById('priceResult');
+
+function updateValuation() {
+    if (!yearSlider || !conditionSlider || !priceResult) return;
+
+    const year = parseInt(yearSlider.value);
+    const condition = parseInt(conditionSlider.value);
+
+    yearValue.textContent = year;
+    conditionValue.textContent = condition;
+
+    // Dummy calculation logic
+    // Base for 2010 car in poor condition
+    let basePrice = 0;
+
+    // Each year adds value (Max 15 years * 5500 = 82500)
+    const yearFactor = (year - 2010) * 5500;
+
+    // Condition adds value (Max 10 * 1000 = 10000)
+    const conditionFactor = condition * 1000;
+
+    let estimatedMin = basePrice + yearFactor + conditionFactor;
+
+    // Ensure strictly 1000 minimum (though formula should hit it naturally at 2010/Cond 1)
+    if (estimatedMin < 1000) {
+        estimatedMin = 1000;
+    }
+
+    let estimatedMax = estimatedMin * 1.15;
+
+    // Enforce maximum price of 100,000€
+    if (estimatedMax > 100000) {
+        estimatedMax = 100000;
+        // Adjust min if it exceeds max due to cap (unlikely with current logic but good safety)
+        if (estimatedMin > 100000) estimatedMin = 95000;
+    }
+
+    // Format currency
+    const formatter = new Intl.NumberFormat('de-DE', {
+        style: 'currency',
+        currency: 'EUR',
+        maximumFractionDigits: 0
+    });
+
+    priceResult.textContent = `${formatter.format(estimatedMin)} - ${formatter.format(estimatedMax)}`;
+}
+
+if (yearSlider && conditionSlider) {
+    yearSlider.addEventListener('input', updateValuation);
+    conditionSlider.addEventListener('input', updateValuation);
+    updateValuation(); // Initial call
+}
+
+// --- Typewriter Effect ---
+const typeWriterElement = document.querySelector('.type-writer');
+if (typeWriterElement) {
+    const text = typeWriterElement.getAttribute('data-text');
+    let i = 0;
+
+    function type() {
+        if (i < text.length) {
+            typeWriterElement.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 100);
+        }
+    }
+
+    // Start typing after a slight delay
+    setTimeout(type, 500);
+}
+
+// --- 3D Tilt Effect ---
+document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg rotation
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+    });
+});
