@@ -73,7 +73,7 @@ body {
 }
 
 .navbar {
-    padding: 1rem 0;
+    padding: 1.25rem 0;
 }
 
 .navbar .container {
@@ -85,11 +85,12 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
+    flex: 1;
 }
 
 .logo-image {
-    height: 60px;
+    height: 70px;
     width: auto;
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4)) brightness(1.1);
@@ -101,7 +102,7 @@ body {
 }
 
 .logo-text {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 900;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -1083,11 +1084,11 @@ body {
     }
 
     .logo-image {
-        height: 55px;
+        height: 60px;
     }
 
     .logo-text {
-        font-size: 1.125rem;
+        font-size: 1.5rem;
     }
 
     .footer-logo-image {
