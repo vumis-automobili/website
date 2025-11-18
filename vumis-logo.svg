@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E28B"/>
+      <stop offset="50%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#E8B923"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FFEA00"/>
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="200" cy="200" r="195" fill="#000000"/>
+
+  <!-- Outer gold ring (with subtle glow) -->
+  <circle cx="200" cy="200" r="192" fill="none" stroke="url(#goldGlow)" stroke-width="6"/>
+  <circle cx="200" cy="200" r="190" fill="none" stroke="url(#gold)" stroke-width="4"/>
+
+  <!-- Inner circle -->
+  <circle cx="200" cy="200" r="160" fill="none" stroke="url(#gold)" stroke-width="2"/>
+
+  <!-- Stylized car silhouette on top -->
+  <path d="M200 60
+           C140 65, 100 90, 100 120
+           C100 135, 130 145, 170 150
+           L230 150
+           C270 145, 300 135, 300 120
+           C300 90, 260 65, 200 60
+           L200 60
+           M130 130
+           Q130 140 140 140
+           Q150 140 150 130
+           Q150 120 140 120
+           Q130 120 130 130
+           M250 130
+           Q250 140 260 140
+           Q270 140 270 130
+           Q270 120 260 120
+           Q250 120 250 130"
+        fill="url(#gold)"/>
+
+  <!-- VM monogram -->
+  <text x="200" y="245" font-family="Arial, Helvetica, sans-serif" font-size="140" font-weight="bold"
+        fill="url(#gold)" text-anchor="middle" letter-spacing="-8">VM</text>
+
+  <!-- Diagonal slash that also forms the hidden "U" -->
+  <line x1="125" y1="155" x2="275" y2="305" stroke="url(#gold)" stroke-width="28" stroke-linecap="round"/>
+
+  <!-- UMIS automobili text -->
+  <text x="200" y="340" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500"
+        fill="url(#gold)" text-anchor="middle" letter-spacing="6">UMIS automobili</text>
+</svg>
