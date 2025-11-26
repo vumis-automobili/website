@@ -137,6 +137,34 @@
 </head>
 
 <body>
+    <!-- Premium Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="vumis-logo-new.jpg" alt="VUMIS" class="loader-logo-img">
+                <div class="loader-ring"></div>
+            </div>
+            <div class="loader-text">
+                <span>V</span><span>U</span><span>M</span><span>I</span><span>S</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
     <header class="header">
         <nav class="navbar">
             <div class="container">
@@ -166,27 +194,57 @@
     </header>
 
     <main>
-        <!-- Hero Section with Car Background -->
-        <section class="hero">
+        <!-- Hero Section with Video Background -->
+        <section class="hero" id="hero">
+            <!-- Hero Background Image -->
+            <div class="hero-bg-image"></div>
+
+            <!-- Parallax Layers -->
+            <div class="parallax-container">
+                <div class="parallax-layer parallax-bg" data-speed="0.2"></div>
+                <div class="parallax-layer parallax-mid" data-speed="0.5"></div>
+                <div class="parallax-layer parallax-front" data-speed="0.8"></div>
+            </div>
+
             <div class="hero-overlay"></div>
+            <div class="hero-gradient-overlay"></div>
+
             <div class="hero-content">
                 <div class="container">
                     <div class="hero-text">
-                        <h1 class="hero-title">
+                        <div class="hero-badge animate-fade-in">
+                            <i class="fas fa-star"></i>
+                            <span>Premium Otkup Vozila</span>
+                        </div>
+                        <h1 class="hero-title animate-slide-up">
                             Najbolje Cene za <br>
                             <span class="highlight type-writer" data-text="Otkup Automobila"></span>
                             <span class="cursor">|</span>
                         </h1>
-                        <p class="hero-description">
+                        <p class="hero-description animate-slide-up delay-1">
                             Besplatna procena i isplata u kešu odmah. Dolazimo na vašu adresu bilo gde u Srbiji.
                         </p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary glow-effect">Besplatna Procena</a>
-                            <a href="tel:0656810032" class="btn btn-secondary glow-effect">Pozovite Odmah</a>
+                        <div class="hero-buttons animate-slide-up delay-2">
+                            <a href="#contact" class="btn btn-primary glow-effect magnetic-btn">
+                                <span class="btn-content">Besplatna Procena</span>
+                                <span class="btn-glow"></span>
+                            </a>
+                            <a href="tel:0656810032" class="btn btn-secondary glow-effect magnetic-btn">
+                                <span class="btn-content">Pozovite Odmah</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Skrolujte dole</span>
+            </div>
+
             <!-- Background pattern -->
             <div class="hero-pattern"></div>
         </section>
@@ -386,29 +444,272 @@
             </div>
         </section>
 
-        <!-- Trust Signals Section -->
+        <!-- Trust Signals Section with Animated Counters -->
         <section class="trust-section">
             <div class="container">
                 <div class="trust-grid">
-                    <div class="trust-stat">
-                        <div class="trust-number">500+</div>
+                    <div class="trust-stat" data-aos="fade-up">
+                        <div class="trust-icon">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <div class="trust-number counter" data-target="500" data-suffix="+">0</div>
                         <div class="trust-label">Vozila Godišnje</div>
                         <p>Uspešno realizovanih transakcija</p>
                     </div>
-                    <div class="trust-stat">
-                        <div class="trust-number">30min</div>
+                    <div class="trust-stat" data-aos="fade-up" data-aos-delay="100">
+                        <div class="trust-icon">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <div class="trust-number counter" data-target="30" data-suffix="min">0</div>
                         <div class="trust-label">Procena Vozila</div>
                         <p>Brza i profesionalna procena</p>
                     </div>
-                    <div class="trust-stat">
+                    <div class="trust-stat" data-aos="fade-up" data-aos-delay="200">
+                        <div class="trust-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
                         <div class="trust-number">24/7</div>
                         <div class="trust-label">Dostupnost</div>
                         <p>Kontaktirajte nas bilo kada</p>
                     </div>
-                    <div class="trust-stat">
-                        <div class="trust-number">100%</div>
+                    <div class="trust-stat" data-aos="fade-up" data-aos-delay="300">
+                        <div class="trust-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="trust-number counter" data-target="100" data-suffix="%">0</div>
                         <div class="trust-label">Zadovoljstvo</div>
                         <p>Garantujemo fer poslovanje</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vehicle Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Galerija</span>
+                    <h2 class="section-title">Pogledajte Naša Vozila</h2>
+                    <p class="section-description">Izbor premium automobila iz naše ponude</p>
+                </div>
+
+                <!-- Gallery Filters -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Sva Vozila</button>
+                    <button class="filter-btn" data-filter="premium">Premium</button>
+                    <button class="filter-btn" data-filter="suv">SUV</button>
+                    <button class="filter-btn" data-filter="sedan">Sedan</button>
+                    <button class="filter-btn" data-filter="sport">Sport</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="premium">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80" alt="BMW Serija 5" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <span class="gallery-badge">Premium</span>
+                                    <h4>BMW Serija 5</h4>
+                                    <p>2021 • Automatik • Dizel</p>
+                                </div>
+                                <button class="gallery-zoom" data-img="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&q=90">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="suv">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1606611013016-969c19ba27bb?w=600&q=80" alt="Mercedes GLE" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <span class="gallery-badge">SUV</span>
+                                    <h4>Mercedes GLE</h4>
+                                    <p>2022 • Automatik • Dizel</p>
+                                </div>
+                                <button class="gallery-zoom" data-img="https://images.unsplash.com/photo-1606611013016-969c19ba27bb?w=1200&q=90">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="sedan">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80" alt="Audi A6" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <span class="gallery-badge">Sedan</span>
+                                    <h4>Audi A6</h4>
+                                    <p>2020 • Automatik • Benzin</p>
+                                </div>
+                                <button class="gallery-zoom" data-img="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1200&q=90">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="sport">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80" alt="Porsche 911" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <span class="gallery-badge">Sport</span>
+                                    <h4>Porsche 911</h4>
+                                    <p>2021 • Automatik • Benzin</p>
+                                </div>
+                                <button class="gallery-zoom" data-img="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1200&q=90">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="premium">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=600&q=80" alt="Mercedes S-Klasa" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <span class="gallery-badge">Premium</span>
+                                    <h4>Mercedes S-Klasa</h4>
+                                    <p>2022 • Automatik • Hibrid</p>
+                                </div>
+                                <button class="gallery-zoom" data-img="https://images.unsplash.com/photo-1563720223185-11003d516935?w=1200&q=90">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="suv">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80" alt="Range Rover Sport" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <span class="gallery-badge">SUV</span>
+                                    <h4>Range Rover Sport</h4>
+                                    <p>2021 • Automatik • Dizel</p>
+                                </div>
+                                <button class="gallery-zoom" data-img="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=1200&q=90">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <button class="lightbox-close"><i class="fas fa-times"></i></button>
+            <img src="" alt="Uvećana slika" class="lightbox-img">
+        </div>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Utisci Klijenata</span>
+                    <h2 class="section-title">Šta Kažu Naši Klijenti</h2>
+                    <p class="section-description">Više od 500 zadovoljnih klijenata godišnje</p>
+                </div>
+
+                <div class="testimonials-slider" id="testimonialsSlider">
+                    <div class="testimonials-track">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Izuzetno profesionalna usluga. Procena je bila tačna i fer, a isplata je obavljena na licu mesta. Preporučujem svima!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Marko P.</h4>
+                                    <span>Beograd • BMW X5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Brzo i efikasno. Došli su na moju adresu, pregledali auto i dogovorili se u roku od sat vremena. Keš na ruke, bez čekanja."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Jelena S.</h4>
+                                    <span>Novi Sad • Audi A4</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Najbolja cena na tržištu! Obišao sam nekoliko otkupljača, ali VUMIS je ponudio ubedljivo najviše. Sve preporuke."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Stefan M.</h4>
+                                    <span>Niš • Mercedes C-Klasa</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Zamena vozila je prošla bez problema. Fer procena oba auta, sve papire su sredili oni. Bukvalno sam samo potpisao i vozio novi auto kući."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Nikola D.</h4>
+                                    <span>Beograd • VW Passat</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Controls -->
+                    <div class="slider-controls">
+                        <button class="slider-btn prev" id="prevTestimonial">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="slider-dots" id="sliderDots"></div>
+                        <button class="slider-btn next" id="nextTestimonial">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
