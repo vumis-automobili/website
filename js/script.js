@@ -369,18 +369,13 @@ function initValuationSlider() {
         yearValue.textContent = year;
         conditionValue.textContent = condition;
 
-        let basePrice = 0;
-        const yearFactor = (year - 2010) * 5500;
-        const conditionFactor = condition * 1000;
+        // Scale: 2010 + condition 1 = 500€, 2025 + condition 10 = 50,000€
+        const basePrice = 500;
+        const yearFactor = (year - 2010) * 1980;
+        const conditionFactor = (condition - 1) * 2200;
 
         let estimatedMin = basePrice + yearFactor + conditionFactor;
-        if (estimatedMin < 1000) estimatedMin = 1000;
-
-        let estimatedMax = estimatedMin * 1.15;
-        if (estimatedMax > 100000) {
-            estimatedMax = 100000;
-            if (estimatedMin > 100000) estimatedMin = 95000;
-        }
+        let estimatedMax = Math.round(estimatedMin * 1.15);
 
         const formatter = new Intl.NumberFormat('de-DE', {
             style: 'currency',
