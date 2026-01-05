@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://vumis-automobili.github.io/website/</loc>
+    <loc>https://otkupkola.com/</loc>
     <lastmod>2025-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://vumis-automobili.github.io/website/vumis-logo-new.jpg</image:loc>
+      <image:loc>https://otkupkola.com/vumis-logo-new.jpg</image:loc>
       <image:title>VUMIS Automobili Logo</image:title>
       <image:caption>Otkup, prodaja i zamena automobila</image:caption>
     </image:image>
