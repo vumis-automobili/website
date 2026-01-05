@@ -63,7 +63,7 @@ All features are initialized via `DOMContentLoaded` event:
 ### Key Business Information
 - Phone: 065/6810-032 (Serbian format) / +381656810032 (international)
 - WhatsApp integration for contact
-- Services: Otkup (car buying), Prodaja (selling), Zamena (trading), Posredovanje (brokerage)
+- Services: Otkup (car buying), Prodaja (selling), Zamena (trading)
 - Location: Belgrade, Serbia (serves all of Serbia)
 
 ### SEO Implementation
